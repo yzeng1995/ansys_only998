@@ -2,7 +2,7 @@ finish
 /clear
 /filename,only998
 /prep7
-!==============element type
+!===============element type
 et,1,solid285
 !==============material property
 mp,ex,1,1e12
