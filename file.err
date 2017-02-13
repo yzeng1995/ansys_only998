@@ -1,0 +1,33 @@
+/COM,ANSYS RELEASE Release 16.0      BUILD 16.0      UP20141203       18:34:52
+
+ *** WARNING ***                         CP =      22.612   TIME= 19:30:27
+ Some of the requested volumes to be subtracted were also included in    
+ the selected set to be operated on.  These volumes have been removed    
+ from the volume to be operated on list.                                 
+
+ *** WARNING ***                         CP =      25.512   TIME= 19:34:53
+ Some of the requested volumes to be subtracted were also included in    
+ the selected set to be operated on.  These volumes have been removed    
+ from the volume to be operated on list.                                 
+
+ *** WARNING ***                         CP =      31.756   TIME= 19:42:56
+ REPLOT is not a recognized SOLUTION command, abbreviation, or macro.    
+  This command will be ignored.                                          
+
+ *** WARNING ***                         CP =      40.024   TIME= 19:51:12
+ Pivoting has been activated for the Sparse Matrix solver.  The memory   
+ required may greatly exceed the predicted amount.  In that event, use   
+ the BCSOPTION command to change the memory mode and/or memory size      
+ used by the Sparse Matrix solver.                                       
+/COM,ANSYS RELEASE Release 16.0      BUILD 16.0      UP20141203       19:54:31
+
+ *** WARNING ***                         CP =       1.248   TIME= 19:54:48
+ Some of the requested volumes to be subtracted were also included in    
+ the selected set to be operated on.  These volumes have been removed    
+ from the volume to be operated on list.                                 
+
+ *** WARNING ***                         CP =       4.304   TIME= 19:54:50
+ Pivoting has been activated for the Sparse Matrix solver.  The memory   
+ required may greatly exceed the predicted amount.  In that event, use   
+ the BCSOPTION command to change the memory mode and/or memory size      
+ used by the Sparse Matrix solver.                                       
