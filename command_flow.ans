@@ -1,0 +1,100 @@
+finish
+/clear
+/filename,only998
+/prep7
+!==============element type
+et,1,solid285
+!==============material property
+mp,ex,1,1e12
+mp,prxy,1,0.2
+
+mp,ex,2,1.6e11
+mp,prxy,2,0.3
+!==============size difine
+r=0.01
+h1=0.005
+h2=0.01
+n=16   !side number
+r_ring=0.015  !
+wd_ring=r
+!==============points
+csys,1
+!===*DO, Par, IVAL, FVAL, INC
+*do,i,1,n,1
+	k,i,r,i*360/n,0
+*enddo
+csys,0
+k,n+1,0,0,h1
+k,n+2,0,0,-h2
+
+!===============areas
+*do,i,1,n-1,1
+	a,i,i+1,n+1
+	a,i,i+1,n+2
+*enddo
+a,1,n,n+1
+a,1,n,n+2
+!===============volu
+asel,all
+va,all
+!===============cut
+block,-r,r,-r,r,h1,h1*0.5
+vsbv,1,2
+numcmp,all
+!================cut ring
+!wp=work plane
+wpoffs,0,0,-r_ring-h2*0.5
+wprota,0,0,90
+
+cylind,r_ring,0,-wd_ring/2,wd_ring/2,0,360
+vsbv,1,2,,,keep
+numcmp,all
+
+cylind,r_ring*0.85,0,-wd_ring/2,wd_ring/2,0,360
+vsbv,all,3
+numcmp,all
+
+wprota,0,0,-90
+wpoffs,0,0,r_ring+h2*0.5
+
+!===============================glue
+vglue,all
+
+numcmp,all
+!========================mesh
+type,1
+mat,1
+mshkey,0
+vmesh,1
+alls
+type,1
+mat,2
+mshkey,0
+vmesh,2
+alls
+
+!=================solve
+/sol
+nsel,s,loc,z,h1*0.5
+d,all,ux,0
+d,all,uy,0
+d,all,uz,0
+alls
+
+!=================force
+local,11,1,0,0,-r_ring-h2*0.5,0,0,90
+csys,11
+
+nsel,s,loc,x,r_ring*0.85
+nsel,r,loc,y,-20,20
+
+csys,0
+
+sf,all,pres,998
+alls
+
+/sol
+solve
+save
+
+
